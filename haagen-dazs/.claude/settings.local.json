@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill -f \"http.server 8731\")",
+      "Bash(nohup python -m http.server 8731)",
+      "Bash(disown)",
+      "Bash(curl -sI http://localhost:8731/index.html)",
+      "Bash(command -v ffmpeg)",
+      "Bash(ffmpeg -version)",
+      "WebFetch(domain:moodang-teacher.com)",
+      "Bash(curl -s -o /dev/null -w \"gsap: %{http_code}\\\\n\" https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js)",
+      "Bash(curl -s -o /dev/null -w \"scrolltrigger: %{http_code}\\\\n\" https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js)",
+      "Bash(curl -s -o /dev/null -w \"lenis: %{http_code}\\\\n\" https://unpkg.com/lenis@1.1.20/dist/lenis.min.js)",
+      "Bash(curl -s -o /dev/null -w \"lenis-latest: %{http_code}\\\\n\" https://unpkg.com/lenis/dist/lenis.min.js)"
+    ]
+  }
+}

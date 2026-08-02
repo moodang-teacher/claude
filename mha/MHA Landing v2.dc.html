@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Anton&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  html, body { margin: 0; padding: 0; background: #08090B; }
+  * { box-sizing: border-box; }
+  a { color: #00E676; text-decoration: none; }
+  a:hover { color: #FFD700; }
+  ::selection { background: #FF3B30; color: #fff; }
+  ::-webkit-scrollbar { height: 6px; width: 6px; }
+  ::-webkit-scrollbar-track { background: #0F1319; }
+  ::-webkit-scrollbar-thumb { background: #2A3444; }
+  @keyframes v2Rise { from { opacity: 0; transform: translateY(56px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes v2Wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+  @keyframes v2Marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes v2MarqR { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+  @keyframes v2Pulse { 0%, 100% { opacity: .4; } 50% { opacity: .85; } }
+  @keyframes v2Scan { from { transform: translateY(-100%); } to { transform: translateY(600%); } }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="background: #08090B; color: #EDEFF2; font-family: 'Pretendard Variable', Pretendard, sans-serif; overflow-x: hidden; position: relative;">
+
+  <!-- fixed frame -->
+  <div style="position: fixed; left: 0; top: 0; bottom: 0; width: 52px; z-index: 70; border-right: 1px solid #171C24; background: rgba(8,9,11,.7); display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 18px 0; pointer-events: none;">
+    <span style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: 13px; color: #00E676;">M<br>H<br>A</span>
+    <span style="writing-mode: vertical-rl; font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .34em; color: #4B5563;">僕のヒーローアカデミア</span>
+    <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 9px; letter-spacing: .2em; color: #4B5563; writing-mode: vertical-rl;">2026</span>
+  </div>
+  <div style="position: fixed; right: 0; top: 0; bottom: 0; width: 52px; z-index: 70; border-left: 1px solid #171C24; background: rgba(8,9,11,.7); pointer-events: none;"></div>
+  <div style="position: fixed; left: 52px; right: 52px; top: 0; height: 3px; z-index: 80; background: #171C24;"><div style="height: 100%; background: linear-gradient(90deg, #00E676, #FFD700); width: {{ scrollPct }}; transition: width .1s linear;"></div></div>
+
+  <div style="position: fixed; right: 62px; top: 18px; z-index: 75; display: flex; gap: 10px; align-items: center;">
+    <a href="#characters" style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .22em; color: #6B7280; padding: 6px 8px;">CHARACTERS</a>
+    <a href="#pv" style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .22em; color: #6B7280; padding: 6px 8px;">PV</a>
+    <button onClick="{{ openTrailer }}" style="cursor: pointer; border: none; background: #FF3B30; color: #fff; font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: 11px; letter-spacing: .12em; padding: 10px 16px; transform: skewX(-12deg);" style-hover="background: #FFD700; color: #08090B;"><span style="display: inline-block; transform: skewX(12deg);">WATCH NOW</span></button>
+  </div>
+
+  <div style="padding: 0 52px;">
+
+  <!-- ============ HERO — full bleed ============ -->
+  <section data-screen-label="Hero" style="position: relative; height: 100vh; min-height: 680px; overflow: hidden; background: #08090B;">
+    <div style="position: absolute; inset: 0; background: repeating-linear-gradient(112deg, #0C1014 0 22px, #0F141A 22px 44px);"></div>
+    <div style="position: absolute; left: 0; right: 0; top: 96px; display: flex; justify-content: center;">
+      <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 11px; letter-spacing: .26em; color: #4E5866; text-align: center;">FULL-BLEED KEY VISUAL — 미도리야 &amp; 올마이트 (가로 전면)</span>
+    </div>
+    <div style="position: absolute; inset: 0; background: radial-gradient(70% 90% at 78% 40%, rgba(0,230,118,.28), transparent 62%), linear-gradient(180deg, rgba(8,9,11,.9) 0%, rgba(8,9,11,.25) 45%, #08090B 100%);"></div>
+    <div style="position: absolute; left: 0; right: 0; top: 0; height: 120px; background: linear-gradient(180deg, rgba(255,215,0,.16), transparent); animation: v2Scan 6s linear infinite; pointer-events: none;"></div>
+
+    <div style="position: absolute; left: 0; right: 0; bottom: 128px;">
+      <div style="animation: v2Wipe .9s .1s cubic-bezier(.2,.9,.2,1) both;">
+        <div style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(50px, 11.4vw, 220px); line-height: .8; letter-spacing: -.03em; transform: skewX(-9deg); margin-left: -.02em; padding-left: 34px; padding-right: 60px; color: #EDEFF2; white-space: nowrap;">GO BEYOND</div>
+      </div>
+      <div style="animation: v2Wipe .9s .28s cubic-bezier(.2,.9,.2,1) both;">
+        <div style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(50px, 11.4vw, 220px); line-height: .8; letter-spacing: -.03em; transform: skewX(-9deg); padding-left: 34px; padding-right: 60px; color: transparent; -webkit-text-stroke: 2px #00E676; white-space: nowrap;">PLUS ULTRA</div>
+      </div>
+
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; padding: 34px 44px 0;">
+        <p style="max-width: 400px; margin: 0; font-size: 16px; line-height: 1.85; color: #A8B1BD; text-wrap: pretty; animation: v2Rise .8s .5s cubic-bezier(.2,.9,.2,1) both;">인구의 80%가 '개성'을 가진 시대.<br>아무것도 갖지 못한 소년, <b style="color:#EDEFF2;">미도리야 이즈쿠</b>가<br>최고의 히어로에 닿기까지의 이야기.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; animation: v2Rise .8s .62s cubic-bezier(.2,.9,.2,1) both;">
+          <button onClick="{{ openTrailer }}" style="cursor: pointer; border: none; background: #00E676; color: #05130A; font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: 15px; letter-spacing: .04em; padding: 20px 30px; transform: skewX(-12deg);" style-hover="background: #FFD700;"><span style="display: inline-block; transform: skewX(12deg);">▶ 트레일러 재생</span></button>
+          <a href="#watch" style="border: 1px solid #39424F; color: #EDEFF2; font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: 15px; padding: 20px 28px; transform: skewX(-12deg); display: inline-block;" style-hover="border-color: #FFD700; color: #FFD700;"><span style="display: inline-block; transform: skewX(12deg);">정주행 시작</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; border-top: 1px solid #1B222C; border-bottom: 1px solid #1B222C; background: #0B0E12; overflow: hidden; padding: 12px 0;">
+      <div style="display: flex; width: max-content; animation: v2Marq 26s linear infinite;">
+        <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 11px; letter-spacing: .3em; color: #5B6675; white-space: nowrap; padding-right: 40px;">TV ANIMATION ◆ FINAL SEASON ON AIR ◆ 원작 호리코시 코헤이 ◆ 애니메이션 제작 BONES ◆ 매주 토요일 신규 에피소드 ◆&nbsp;</span>
+        <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 11px; letter-spacing: .3em; color: #5B6675; white-space: nowrap; padding-right: 40px;">TV ANIMATION ◆ FINAL SEASON ON AIR ◆ 원작 호리코시 코헤이 ◆ 애니메이션 제작 BONES ◆ 매주 토요일 신규 에피소드 ◆&nbsp;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORLDVIEW — bleeding number + narrow column ============ -->
+  <section data-screen-label="Worldview" style="position: relative; padding: 140px 0 120px; overflow: hidden;">
+    <div style="position: relative; margin-left: -8vw; font-family: Anton, 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(200px, 40vw, 620px); line-height: .72; color: #0F141A; letter-spacing: -.04em; pointer-events: none; user-select: none;">80%</div>
+
+    <div style="position: relative; margin-top: -14vw; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 60px; max-width: 1180px; padding: 0 44px;">
+      <div>
+        <div style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .32em; color: #FF3B30;">01 — WORLDVIEW</div>
+        <h2 style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(24px, 2.9vw, 48px); line-height: 1; margin: 16px 0 0; transform: skewX(-7deg);">개성이<br>당연해진 세계</h2>
+      </div>
+      <p style="font-size: 16.5px; line-height: 2; color: #98A2AF; margin: 0; align-self: end; text-wrap: pretty;">초상 능력 <b style="color:#EDEFF2;">'개성(Quirk)'</b>이 흔해진 시대, 범죄도 함께 진화했다. 사람들을 지키는 <b style="color:#EDEFF2;">히어로</b>는 하나의 직업이 되었고 소년들은 그 정점을 꿈꾼다. 무개성으로 태어난 이즈쿠가 평화의 상징 <b style="color:#EDEFF2;">올마이트</b>를 만나면서, 세계의 다음 장이 열린다.</p>
+    </div>
+
+    <!-- full-bleed triptych, no container -->
+    <div style="margin-top: 90px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2px; background: #171C24; border-top: 1px solid #171C24; border-bottom: 1px solid #171C24;">
+      <sc-for list="{{ panels }}" as="p" hint-placeholder-count="3">
+        <div style="position: relative; height: 62vh; min-height: 420px; background: repeating-linear-gradient(112deg, #0C1014 0 16px, #101720 16px 32px); overflow: hidden; cursor: default;" style-hover="background: repeating-linear-gradient(112deg, #101720 0 16px, #16202B 16px 32px);">
+          <span style="position: absolute; top: 44%; left: 0; right: 0; text-align: center; font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .22em; color: #4E5866;">{{ p.slot }}</span>
+          <div style="position: absolute; inset: auto 0 0 0; padding: 30px 28px; background: linear-gradient(180deg, transparent, rgba(8,9,11,.95) 55%);">
+            <div style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .22em; color: {{ p.color }};">{{ p.en }}</div>
+            <div style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: 30px; margin-top: 8px; transform: skewX(-7deg);">{{ p.ko }}</div>
+            <p style="margin: 10px 0 0; font-size: 13.5px; line-height: 1.8; color: #8C96A3; max-width: 320px;">{{ p.desc }}</p>
+          </div>
+          <div style="position: absolute; top: 22px; left: 26px; font-family: Anton, 'Pretendard Variable', Pretendard, sans-serif; font-size: 46px; color: transparent; -webkit-text-stroke: 1px #2A3444;">{{ p.no }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ CHARACTERS — full-bleed accordion carousel ============ -->
+  <section id="characters" data-screen-label="Characters" style="position: relative; padding: 110px 0 0; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: radial-gradient(60% 50% at 50% 60%, {{ activeGlow }}, transparent 70%); transition: background .7s ease; pointer-events: none;"></div>
+
+    <div style="position: relative; display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; flex-wrap: wrap; padding: 0 44px 34px;">
+      <div>
+        <div style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .32em; color: #FF3B30;">02 — CHARACTER &amp; QUIRK</div>
+        <h2 style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(27px, 3.8vw, 62px); line-height: .95; margin: 14px 0 0; transform: skewX(-7deg);">개성의 <span style="color: #FFD700;">스펙트럼</span></h2>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 11px; letter-spacing: .2em; color: #6B7280;">{{ charIndexLabel }}</span>
+        <button onClick="{{ prevChar }}" style="cursor: pointer; width: 46px; height: 46px; border: 1px solid #39424F; background: transparent; color: #EDEFF2; font-size: 15px;" style-hover="border-color: #00E676; color: #00E676;">←</button>
+        <button onClick="{{ nextChar }}" style="cursor: pointer; width: 46px; height: 46px; border: 1px solid #39424F; background: transparent; color: #EDEFF2; font-size: 15px;" style-hover="border-color: #00E676; color: #00E676;">→</button>
+      </div>
+    </div>
+
+    <div style="position: relative; display: flex; gap: 2px; height: 74vh; min-height: 520px; background: #171C24; border-top: 1px solid #171C24; border-bottom: 1px solid #171C24;">
+      <sc-for list="{{ characters }}" as="c" hint-placeholder-count="5">
+        <div onClick="{{ c.select }}" style="position: relative; flex: {{ c.flex }} 1 0; min-width: 74px; overflow: hidden; cursor: pointer; background: repeating-linear-gradient(112deg, #0B0F14 0 16px, #0F151D 16px 32px); transition: flex-grow .65s cubic-bezier(.2,.9,.2,1);">
+          <div style="position: absolute; inset: 0; background: radial-gradient(75% 60% at 50% 78%, {{ c.tint }}, transparent 70%); transition: opacity .5s ease;"></div>
+          <span style="position: absolute; top: 20%; left: 0; right: 0; text-align: center; font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .2em; color: #4E5866; opacity: {{ c.artOpacity }}; transition: opacity .4s ease;">CHARACTER ART — {{ c.name }}</span>
+
+          <div style="position: absolute; left: 22px; bottom: 26px; writing-mode: vertical-rl; font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: 19px; letter-spacing: .06em; color: #8C96A3; opacity: {{ c.railOpacity }}; transition: opacity .4s ease; white-space: nowrap;">{{ c.name }}</div>
+
+          <div style="position: absolute; inset: auto 0 0 0; padding: 40px 36px; background: linear-gradient(180deg, transparent, rgba(8,9,11,.92) 42%); opacity: {{ c.panelOpacity }}; transition: opacity .5s ease; pointer-events: none;">
+            <div style="display: flex; align-items: flex-end; gap: 34px; flex-wrap: wrap;">
+              <div style="min-width: 260px;">
+                <div style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .24em; color: {{ c.color }};">{{ c.no }} / QUIRK — {{ c.quirkEn }}</div>
+                <div style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(30px, 3.4vw, 54px); line-height: 1; margin-top: 10px; transform: skewX(-7deg); color: {{ c.color }};">{{ c.quirk }}</div>
+                <div style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: 20px; margin-top: 10px;">{{ c.name }}</div>
+                <p style="margin: 12px 0 0; font-size: 14px; line-height: 1.85; color: #98A2AF; max-width: 430px; text-wrap: pretty;">{{ c.desc }}</p>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: flex-end; height: 130px;">
+                <sc-for list="{{ c.stats }}" as="s" hint-placeholder-count="4">
+                  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 54px;">
+                    <span style="font-family: Anton, 'Pretendard Variable', Pretendard, sans-serif; font-size: 15px; color: #EDEFF2;">{{ s.grade }}</span>
+                    <span style="width: 12px; height: {{ s.h }}; background: {{ s.color }}; transition: height .6s cubic-bezier(.2,.9,.2,1);"></span>
+                    <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 8.5px; letter-spacing: .12em; color: #6B7280;">{{ s.label }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="padding: 16px 44px 0; font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .2em; color: #4E5866;">CLICK A PANEL TO EXPAND — 클릭하여 캐릭터 전환</div>
+  </section>
+
+  <!-- ============ HIGHLIGHTS — horizontal scroll rail ============ -->
+  <section data-screen-label="Highlights" style="position: relative; padding: 130px 0 120px;">
+    <div style="padding: 0 44px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+      <div>
+        <div style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .32em; color: #FF3B30;">03 — WHY THIS SHOW</div>
+        <h2 style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(25px, 3.5vw, 56px); line-height: .96; margin: 14px 0 0; transform: skewX(-7deg);">봐야 하는 이유</h2>
+      </div>
+      <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .2em; color: #4E5866;">SCROLL →</span>
+    </div>
+
+    <div style="margin-top: 48px; display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 10px 44px 34px;">
+      <sc-for list="{{ highlights }}" as="h" hint-placeholder-count="3">
+        <div style="scroll-snap-align: center; flex: 0 0 clamp(300px, 52vw, 720px); margin-top: {{ h.offset }}; border: 1px solid #1B222C; background: #0B0F14; position: relative; overflow: hidden;" style-hover="border-color: #FFD700;">
+          <div style="height: 320px; background: repeating-linear-gradient(112deg, #0C1014 0 16px, #101720 16px 32px); display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .22em; color: #4E5866;">{{ h.slot }}</span>
+          </div>
+          <div style="padding: 30px 32px 36px;">
+            <div style="display: flex; align-items: baseline; gap: 14px;">
+              <span style="font-family: Anton, 'Pretendard Variable', Pretendard, sans-serif; font-size: 44px; color: {{ h.color }}; line-height: .8;">{{ h.no }}</span>
+              <h3 style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(22px, 2.4vw, 34px); margin: 0; transform: skewX(-6deg);">{{ h.title }}</h3>
+            </div>
+            <p style="margin: 16px 0 0; font-size: 15px; line-height: 1.9; color: #98A2AF; max-width: 560px; text-wrap: pretty;">{{ h.desc }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS — vertical stack ============ -->
+  <section data-screen-label="Reviews" style="position: relative; padding: 20px 0 130px;">
+    <div style="max-width: 1080px; margin: 0 auto; padding: 0 44px;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+        <div>
+          <div style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .32em; color: #FF3B30;">04 — REVIEWS</div>
+          <h2 style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(25px, 3.5vw, 56px); line-height: .96; margin: 14px 0 0; transform: skewX(-7deg);">먼저 본 사람들의 <span style="color: #00E676;">한 마디</span></h2>
+        </div>
+        <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .2em; color: #4E5866;">평점 4.9 / 5.0 · 12,480명</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 46px;">
+        <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="5">
+          <div style="display: grid; grid-template-columns: minmax(220px, 1fr) auto; gap: 22px; align-items: end; background: {{ r.bg }}; padding: 30px 32px; transition: transform .5s cubic-bezier(.16,1,.3,1);" style-hover="transform: translateX(14px) scale(1.015);">
+            <p style="margin: 0; font-weight: 700; font-size: clamp(17px, 1.6vw, 22px); line-height: 1.7; letter-spacing: -.02em; color: {{ r.fg }}; text-wrap: pretty; max-width: 720px;">{{ r.text }}</p>
+            <div style="display: flex; align-items: center; justify-content: flex-end; gap: 14px;">
+              <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 11px; letter-spacing: .12em; color: {{ r.meta }};">{{ r.id }}</span>
+              <span style="font-family: Anton, 'Pretendard Variable', Pretendard, sans-serif; font-size: 15px; color: {{ r.meta }};">{{ r.score }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PV — full-bleed cinema ============ -->
+  <section id="pv" data-screen-label="PV" style="position: relative; overflow: hidden; border-top: 1px solid #171C24; border-bottom: 1px solid #171C24;">
+    <div onClick="{{ openTrailer }}" style="position: relative; height: 88vh; min-height: 560px; background: repeating-linear-gradient(112deg, #0A0D11 0 18px, #0E141B 18px 36px); cursor: pointer; display: flex; align-items: center; justify-content: center;">
+      <div style="position: absolute; inset: 0; background: radial-gradient(50% 50% at 50% 50%, rgba(0,230,118,.14), transparent 70%);"></div>
+      <div style="position: relative; text-align: center;">
+        <div style="width: 112px; height: 112px; border-radius: 50%; border: 1px solid #00E676; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #00E676; font-size: 30px; animation: v2Pulse 2.6s ease-in-out infinite;">▶</div>
+        <div style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(30px, 4.6vw, 74px); margin-top: 26px; transform: skewX(-8deg);">{{ activeSeasonTitle }}</div>
+        <div style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .3em; color: #56616F; margin-top: 10px;">OFFICIAL MAIN PV — 02:14</div>
+      </div>
+      <div style="position: absolute; left: 44px; top: 40px; font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .32em; color: #FF3B30;">05 — OFFICIAL PV</div>
+    </div>
+    <div style="display: flex; gap: 0; border-top: 1px solid #171C24; overflow-x: auto;">
+      <sc-for list="{{ seasons }}" as="s" hint-placeholder-count="4">
+        <button onClick="{{ s.select }}" style="cursor: pointer; flex: 1 0 auto; min-width: 160px; border: none; border-right: 1px solid #171C24; background: {{ s.bg }}; color: {{ s.fg }}; font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 11px; letter-spacing: .2em; padding: 22px 20px; transition: all .25s ease;" style-hover="color: #FFD700;">{{ s.label }}</button>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ WATCH — contained ============ -->
+  <section id="watch" data-screen-label="Watch" style="position: relative; padding: 120px 0;">
+    <div style="max-width: 900px; margin: 0 auto; padding: 0 44px;">
+      <div style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .32em; color: #FF3B30;">06 — STREAMING</div>
+      <h2 style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(22px, 3.1vw, 45px); line-height: 1; margin: 14px 0 40px; transform: skewX(-7deg);">지금 바로 시청하기</h2>
+      <div style="display: flex; flex-direction: column;">
+        <sc-for list="{{ platforms }}" as="p" hint-placeholder-count="4">
+          <a href="#watch" style="display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 24px; padding: 26px 6px; border-top: 1px solid #1B222C; color: #EDEFF2; transition: all .25s ease; --reveal: 0;" style-hover="padding-left: 22px; color: #FFD700; background: #0C1014; --reveal: 1;">
+            <svg width="48" height="48" viewBox="0 0 48 48" style="opacity: var(--reveal, 0); transform: scale(calc(0.6 + var(--reveal, 0) * 0.4)); transition: opacity .3s ease, transform .3s ease;">
+              <circle cx="24" cy="24" r="23" fill="{{ p.color }}"></circle>
+              <text x="24" y="24" text-anchor="middle" dominant-baseline="central" font-family="Archivo Black, sans-serif" font-size="20" fill="#08090B">{{ p.initial }}</text>
+            </svg>
+            <span style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(20px, 2.4vw, 30px);">{{ p.name }}</span>
+            <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .18em; color: #6B7280;">{{ p.note }}</span>
+            <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 12px;">→</span>
+          </a>
+        </sc-for>
+      </div>
+      <div style="border-top: 1px solid #1B222C;"></div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL ============ -->
+  <section data-screen-label="Final" style="position: relative; padding: 60px 0 0; overflow: hidden;">
+    <div style="display: flex; width: max-content; animation: v2Marq 24s linear infinite;">
+      <span style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(56px, 9vw, 150px); line-height: 1.05; white-space: nowrap; transform: skewX(-8deg); color: transparent; -webkit-text-stroke: 1.4px #00E676; padding-right: 40px;">GO BEYOND! PLUS ULTRA! &nbsp;GO BEYOND! PLUS ULTRA!&nbsp;</span>
+      <span style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(56px, 9vw, 150px); line-height: 1.05; white-space: nowrap; transform: skewX(-8deg); color: transparent; -webkit-text-stroke: 1.4px #00E676; padding-right: 40px;">GO BEYOND! PLUS ULTRA! &nbsp;GO BEYOND! PLUS ULTRA!&nbsp;</span>
+    </div>
+    <div style="display: flex; width: max-content; animation: v2MarqR 24s linear infinite; margin-top: -6px;">
+      <span style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(56px, 9vw, 150px); line-height: 1.05; white-space: nowrap; transform: skewX(-8deg); color: #10161D; padding-right: 40px;">PLUS ULTRA! GO BEYOND! &nbsp;PLUS ULTRA! GO BEYOND!&nbsp;</span>
+      <span style="font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: clamp(56px, 9vw, 150px); line-height: 1.05; white-space: nowrap; transform: skewX(-8deg); color: #10161D; padding-right: 40px;">PLUS ULTRA! GO BEYOND! &nbsp;PLUS ULTRA! GO BEYOND!&nbsp;</span>
+    </div>
+
+    <div style="display: flex; justify-content: center; margin-top: 56px;">
+      <button onClick="{{ openTrailer }}" style="cursor: pointer; border: none; background: #FF3B30; color: #fff; font-family: 'Archivo Black', 'Pretendard Variable', Pretendard, sans-serif; font-size: 19px; letter-spacing: .04em; padding: 24px 48px; transform: skewX(-12deg);" style-hover="background: #FFD700; color: #08090B;"><span style="display: inline-block; transform: skewX(12deg);">첫 화 무료로 보기</span></button>
+    </div>
+
+    <footer style="margin-top: 90px; border-top: 1px solid #171C24; padding: 30px 44px 44px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+      <div style="display: flex; gap: 22px;">
+        <a href="#watch" style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .2em; color: #6B7280;">X</a>
+        <a href="#watch" style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .2em; color: #6B7280;">INSTAGRAM</a>
+        <a href="#watch" style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 10px; letter-spacing: .2em; color: #6B7280;">YOUTUBE</a>
+      </div>
+      <div style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 9.5px; letter-spacing: .14em; color: #444C58;">© K. Horikoshi / Shueisha, My Hero Academia Project</div>
+    </footer>
+  </section>
+
+  </div>
+
+  <sc-if value="{{ trailerOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeTrailer }}" style="position: fixed; inset: 0; z-index: 120; background: rgba(4,5,7,.95); display: flex; align-items: center; justify-content: center; padding: 5vw; cursor: pointer;">
+      <div style="width: min(1180px, 100%); aspect-ratio: 16/9; border: 1px solid #00E676; background: repeating-linear-gradient(112deg, #0A0D11 0 18px, #0E141B 18px 36px); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 140px rgba(0,230,118,.2);">
+        <span style="font-family: 'Space Mono', 'Pretendard Variable', Pretendard, monospace; font-size: 11px; letter-spacing: .22em; color: #56616F; text-align: center; line-height: 2;">VIDEO EMBED<br>{{ activeSeasonTitle }} 공식 PV<br>클릭하여 닫기</span>
+      </div>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+const CHARS = [
+  { no: "NO.01", name: "MIDORIYA", ko: "미도리야 이즈쿠", color: "#00E676", quirk: "원 포 올", quirkEn: "ONE FOR ALL",
+    desc: "무개성으로 태어났지만 히어로를 향한 마음만은 누구보다 뜨거웠던 소년. 계승받은 힘을 자신의 것으로 만들어간다.",
+    stats: [["POW", 88, "A"], ["SPD", 76, "B"], ["TEC", 92, "A+"], ["MND", 96, "S"]] },
+  { no: "NO.02", name: "BAKUGO", ko: "바쿠고 카츠키", color: "#FF9500", quirk: "폭파", quirkEn: "EXPLOSION",
+    desc: "손바닥의 땀을 폭발시킨다. 압도적 재능과 지지 않겠다는 자존심으로 언제나 최전선에 선다.",
+    stats: [["POW", 94, "A+"], ["SPD", 90, "A"], ["TEC", 96, "S"], ["MND", 72, "B"]] },
+  { no: "NO.03", name: "TODOROKI", ko: "토도로키 쇼토", color: "#3B9BFF", quirk: "반냉반열", quirkEn: "HALF-COLD HALF-HOT",
+    desc: "오른쪽은 얼음, 왼쪽은 화염. 아버지의 그늘에서 벗어나 자신의 힘으로 싸우기 시작한 웅영고 최강급 신입생.",
+    stats: [["POW", 92, "A"], ["SPD", 78, "B+"], ["TEC", 88, "A"], ["MND", 80, "B+"]] },
+  { no: "NO.04", name: "ALL MIGHT", ko: "올마이트", color: "#FFD700", quirk: "평화의 상징", quirkEn: "SYMBOL OF PEACE",
+    desc: "'괜찮아, 내가 왔다.' 사람들의 미소를 지켜온 최고의 히어로. 자신의 모든 것을 다음 세대에 건넸다.",
+    stats: [["POW", 100, "S+"], ["SPD", 96, "S"], ["TEC", 94, "S"], ["MND", 100, "S+"]] },
+  { no: "NO.05", name: "SHIGARAKI", ko: "시가라키 토무라", color: "#FF3B30", quirk: "붕괴", quirkEn: "DECAY",
+    desc: "다섯 손가락이 닿은 모든 것을 무너뜨린다. 히어로가 만든 사회의 균열 그 자체로 태어난 빌런 연합의 수장.",
+    stats: [["POW", 90, "A"], ["SPD", 74, "B"], ["TEC", 86, "A"], ["MND", 98, "S"]] },
+];
+const SEASONS = ["SEASON 1", "SEASON 2", "SEASON 3", "FINAL SEASON"];
+const hexA = (hex, a) => {
+  const n = parseInt(hex.slice(1), 16);
+  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${a})`;
+};
+
+class Component extends DCLogic {
+  state = { char: 0, season: 3, trailerOpen: false, pct: "0%" };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      this.setState({ pct: (h > 0 ? (window.scrollY / h) * 100 : 0).toFixed(1) + "%" });
+    };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this._onScroll);
+  }
+
+  renderVals() {
+    const i = this.state.char, a = CHARS[i];
+    return {
+      rootRef: (el) => { this._root = el; },
+      scrollPct: this.state.pct,
+      activeGlow: hexA(a.color, 0.16),
+      charIndexLabel: String(i + 1).padStart(2, "0") + " / " + String(CHARS.length).padStart(2, "0"),
+      characters: CHARS.map((c, idx) => {
+        const on = idx === i;
+        return {
+          no: c.no, name: on ? c.ko : c.name, color: c.color, quirk: c.quirk, quirkEn: c.quirkEn, desc: c.desc,
+          flex: on ? 4.2 : 1,
+          tint: on ? hexA(c.color, 0.22) : hexA(c.color, 0.05),
+          artOpacity: on ? 1 : 0,
+          railOpacity: on ? 0 : 1,
+          panelOpacity: on ? 1 : 0,
+          stats: c.stats.map(([label, v, grade]) => ({ label, grade, h: (on ? v * 0.9 : 0) + "px", color: c.color })),
+          select: () => this.setState({ char: idx }),
+        };
+      }),
+      prevChar: () => this.setState((s) => ({ char: (s.char + CHARS.length - 1) % CHARS.length })),
+      nextChar: () => this.setState((s) => ({ char: (s.char + 1) % CHARS.length })),
+      panels: [
+        { no: "01", en: "QUIRK SOCIETY", ko: "개성 사회", color: "#00E676", slot: "PANEL — 개성이 넘치는 거리 전경", desc: "인구의 80%가 초상 능력을 가진 시대. 평범함의 기준이 다시 쓰였다." },
+        { no: "02", en: "U.A. HIGH SCHOOL", ko: "웅영고등학교", color: "#FFD700", slot: "PANEL — 웅영고 정문 / 히어로과 1-A", desc: "최고의 히어로를 배출하는 명문. 여기서 소년들의 3년이 시작된다." },
+        { no: "03", en: "LEAGUE OF VILLAINS", ko: "빌런 연합", color: "#FF3B30", slot: "PANEL — 빌런 연합 실루엣", desc: "사회의 균열에서 태어난 자들. 그들에게도 지켜야 할 신념이 있다." },
+      ],
+      highlights: [
+        { no: "01", title: "압도적 액션 퀄리티", color: "#00E676", offset: "0px", slot: "STILL — 액션 컷", desc: "제작사 BONES가 그려내는 화려한 전투 연출과 컷신. 한 프레임도 놓칠 수 없는 작화의 밀도." },
+        { no: "02", title: "뜨거운 성장 서사", color: "#FFD700", offset: "56px", slot: "STILL — 성장 장면", desc: "실패와 좌절을 넘어 유대를 쌓아가는 소년들의 성장극. 승리보다 더 뜨거운 건 다시 일어서는 순간이다." },
+        { no: "03", title: "입체적인 히어로 & 빌런", color: "#FF3B30", offset: "24px", slot: "STILL — 빌런 컷", desc: "단순한 선악을 넘어선 신념의 대립. 빌런에게도 사연이 있고, 히어로에게도 흔들림이 있다." },
+      ],
+      reviews: [
+        { text: "히어로가 되고 싶었던 게 아니라, 포기하지 않는 사람이 되고 싶었던 거였다는 걸 이 작품 보고 알았다. 3화에서 결국 울었음.", id: "@deku_9th", score: "★ 5.0", bg: "#00E676", fg: "#05130A", meta: "rgba(5,19,10,.6)" },
+        { text: "액션 작화 미쳤다. 스포츠 축제편은 그냥 극장에서 봐야 할 퀄리티. 한 화도 못 건너뛰겠더라.", id: "@bones_fan_02", score: "★ 4.8", bg: "#12181F", fg: "#EDEFF2", meta: "#6B7280" },
+        { text: "빌런 서사가 이렇게까지 설득력 있는 소년만화는 오랜만. 누구도 그냥 악당으로 남지 않는다.", id: "@tomura_note", score: "★ 4.9", bg: "#FFD700", fg: "#08090B", meta: "rgba(8,9,11,.6)" },
+        { text: "애니 입문작으로 추천받아 봤는데 결국 원작 단행본까지 다 샀습니다. 입문자한테 이만한 작품 없음.", id: "@newbie_uA", score: "★ 5.0", bg: "#12181F", fg: "#EDEFF2", meta: "#6B7280" },
+        { text: "'괜찮아, 내가 왔다'는 대사 하나로 힘든 시기를 버텼다. 애니가 사람을 살릴 수도 있구나 싶었음.", id: "@plus_ultra_kr", score: "★ 5.0", bg: "#FF3B30", fg: "#FFFFFF", meta: "rgba(255,255,255,.7)" },
+      ],
+      seasons: SEASONS.map((label, idx) => ({
+        label,
+        bg: idx === this.state.season ? "#00E676" : "transparent",
+        fg: idx === this.state.season ? "#05130A" : "#8C96A3",
+        select: () => this.setState({ season: idx }),
+      })),
+      activeSeasonTitle: SEASONS[this.state.season],
+      platforms: [
+        { name: "LAFTEL", note: "전 시즌 스트리밍", initial: "L", color: "#FF3B30" },
+        { name: "NETFLIX", note: "시즌 1–4 시청 가능", initial: "N", color: "#E50914" },
+        { name: "TVING", note: "더빙판 동시 제공", initial: "T", color: "#FF1493" },
+        { name: "SERIES ON", note: "회차별 구매", initial: "S", color: "#00E676" },
+      ],
+      trailerOpen: this.state.trailerOpen,
+      openTrailer: () => this.setState({ trailerOpen: true }),
+      closeTrailer: () => this.setState({ trailerOpen: false }),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

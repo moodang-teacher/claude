@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  // must run before the browser applies its own scroll restoration on
+  // reload — doing this later (e.g. in motion.js at the bottom of body)
+  // is too late and the pinned worldview slider ends up laid out against
+  // a page that's already scrolled to the old position.
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
+</script>
+<title>GO BEYOND / PLUS ULTRA — My Hero Academia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Anton&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="css/style.css?v=13">
+</head>
+<body>
+
+<div id="root" class="app">
+
+  <!-- fixed frame -->
+  <div class="frame-left">
+    <span class="frame-logo">M<br>H<br>A</span>
+    <span class="frame-rail">僕のヒーローアカデミア</span>
+    <span class="frame-year">2026</span>
+  </div>
+  
+  <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+
+  <header id="site-header" class="site-header">
+    <div class="site-header-inner">
+      <nav class="site-header-links">
+        <a href="#worldview" class="nav-link">WORLDVIEW</a>
+        <a href="#characters" class="nav-link">CHARACTERS</a>
+        <a href="#highlights" class="nav-link">HIGHLIGHTS</a>
+        <a href="#reviews" class="nav-link">REVIEWS</a>
+        <a href="#pv" class="nav-link">PV</a>
+        <a href="#watch" class="nav-link">WATCH</a>
+      </nav>
+      <button type="button" class="btn-nav-cta js-open-trailer">
+        <span class="btn-skew-inner">WATCH NOW</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="content">
+
+  <!-- ============ HERO — full bleed ============ -->
+  <section class="hero" data-screen-label="Hero">
+    <iframe class="hero-key-visual" src="https://www.youtube.com/embed/KQMZPbHfgNs?autoplay=1&mute=1&loop=1&playlist=KQMZPbHfgNs&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3" title="히어로 배경 영상" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-scan"></div>
+    <img class="hero-logo" src="img/mha_logo.webp" alt="My Hero Academia">
+
+    <div class="hero-headline">
+      <div class="hero-title-wipe hero-title-wipe--1">
+        <div class="hero-title">GO BEYOND</div>
+      </div>
+      <div class="hero-title-wipe hero-title-wipe--2">
+        <div class="hero-title hero-title--outline">PLUS ULTRA</div>
+      </div>
+
+      <div class="hero-sub-row">
+        <p class="hero-desc">인구의 80%가 '개성'을 가진 시대.<br>아무것도 갖지 못한 소년, <b>미도리야 이즈쿠</b>가<br>최고의 히어로에 닿기까지의 이야기.</p>
+        <div class="hero-actions">
+          <button type="button" class="btn-primary js-open-trailer">
+            <span class="btn-skew-inner">▶ 트레일러 재생</span>
+          </button>
+          <a href="#watch" class="btn-outline">
+            <span class="btn-skew-inner">정주행 시작</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-ticker">
+      <div class="ticker-track">
+        <span class="ticker-item">TV ANIMATION ◆ FINAL SEASON ON AIR ◆ 원작 호리코시 코헤이 ◆ 애니메이션 제작 BONES ◆ 매주 토요일 신규 에피소드 ◆&nbsp;</span>
+        <span class="ticker-item">TV ANIMATION ◆ FINAL SEASON ON AIR ◆ 원작 호리코시 코헤이 ◆ 애니메이션 제작 BONES ◆ 매주 토요일 신규 에피소드 ◆&nbsp;</span>
+        <span class="ticker-item">TV ANIMATION ◆ FINAL SEASON ON AIR ◆ 원작 호리코시 코헤이 ◆ 애니메이션 제작 BONES ◆ 매주 토요일 신규 에피소드 ◆&nbsp;</span>
+        <span class="ticker-item">TV ANIMATION ◆ FINAL SEASON ON AIR ◆ 원작 호리코시 코헤이 ◆ 애니메이션 제작 BONES ◆ 매주 토요일 신규 에피소드 ◆&nbsp;</span>
+        <span class="ticker-item">TV ANIMATION ◆ FINAL SEASON ON AIR ◆ 원작 호리코시 코헤이 ◆ 애니메이션 제작 BONES ◆ 매주 토요일 신규 에피소드 ◆&nbsp;</span>
+        <span class="ticker-item">TV ANIMATION ◆ FINAL SEASON ON AIR ◆ 원작 호리코시 코헤이 ◆ 애니메이션 제작 BONES ◆ 매주 토요일 신규 에피소드 ◆&nbsp;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORLDVIEW — pinned wipe-reveal slider ============ -->
+  <section id="worldview" class="worldview" data-screen-label="Worldview">
+    <div class="wv-slider">
+      <div class="wv-layer" data-index="0" style="--wv-color:#00E676;">
+        <div class="wv-bgtext">QUIRK</div>
+        <div class="wv-copy">
+          <div class="wv-eyebrow">01 — QUIRK SOCIETY</div>
+          <h3 class="wv-title">개성이<br>당연해진 세계</h3>
+          <p class="wv-desc">'개성'이라는 초능력을 갖고 태어나는 게 당연한 세계, 인류의 80%가 개성을 소유하고 있다. 초능력자들이 많아짐에 따라 과거 만화에서나 나오던 히어로라는 직업이 각광받게 되고 주인공 미도리야 이즈쿠도 히어로를 동경하고 있다.</p>
+        </div>
+        <div class="wv-image">
+          <img src="img/ApUMQ62yBxVNtUPmYY_daLM-XxYEINidxQbSBoWIua9ejuzPohpztR-X5lM2crr0dWGcvo7b0soc2N_lMRbkmA.webp" alt="개성 사회">
+        </div>
+      </div>
+      <div class="wv-layer" data-index="1" style="--wv-color:#FFD700;">
+        <div class="wv-bgtext">U.A. HIGH SCHOOL</div>
+        <div class="wv-copy">
+          <div class="wv-eyebrow">02 — U.A. HIGH SCHOOL</div>
+          <h3 class="wv-title">최고의 히어로를<br>배출하는 명문</h3>
+          <p class="wv-desc">미래의 프로 히어로들을 육성하기 위해 세워진 최고의 히어로 양성기관. 모의전투 및 구조실습을 위해 대규모 시가지를 갖추고 있다. 공장지대, 대형 빌딩, 초대형 수영장 등 여러 종류의 건물을 갖추고 있다.</p>
+        </div>
+        <div class="wv-image">
+          <img src="img/thumb_1994052142_b0dcfac6_AMJrXd.jpg" alt="웅영고등학교">
+        </div>
+      </div>
+      <div class="wv-layer" data-index="2" style="--wv-color:#FF3B30;">
+        <div class="wv-bgtext">VILLAINS</div>
+        <div class="wv-copy">
+          <div class="wv-eyebrow">03 — LEAGUE OF VILLAINS</div>
+          <h3 class="wv-title">사회의 균열에서<br>태어난 자들</h3>
+          <p class="wv-desc">조직의 명확한 비전이나 목표는 없고, 그저 올마이트를 죽이고 세상을 혼돈에 빠트리는 것 정도가 목표인 세력. 빌런으로 활동하는 목표가 애초에 상식을 벗어났거나 이루려는 방식이 잘못된 파탄난 인물들로 구성되어 있다.</p>
+        </div>
+        <div class="wv-image">
+          <img src="img/UT8WUr2Hd4OOdefkGJZzWvZpRz5Fz4T60v3IZH0AzGi-QEj1cJWH4t0hl_KrTHQ4x72dGPOdGA1492HL8n5er-yQ388AKV5-P4RuD0t17MmcxIiawJJ_jKKetP3YZa3AuCHv4blrBoTW1ZjlSHyYCBZ22XslAi45Q4mSQJbaiRA.webp" alt="빌런 연합">
+        </div>
+      </div>
+
+      <div class="worldview-tabs">
+        <span class="worldview-tab" data-index="0">01 <em>개성 사회</em></span>
+        <span class="worldview-tab" data-index="1">02 <em>웅영고등학교</em></span>
+        <span class="worldview-tab" data-index="2">03 <em>빌런 연합</em></span>
+        <div class="worldview-tabs-line"><div class="worldview-tabs-progress"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHARACTERS — full-bleed accordion carousel ============ -->
+  <section id="characters" class="characters" data-screen-label="Characters">
+    <div id="characters-glow" class="characters-glow"></div>
+
+    <div class="characters-head">
+      <div>
+        <div class="eyebrow">02 — CHARACTER &amp; QUIRK</div>
+        <h2 class="section-title">개성의 <span class="text-gold">스펙트럼</span></h2>
+      </div>
+      <div class="characters-nav">
+        <span id="char-index-label" class="char-index">01 / 05</span>
+        <button type="button" id="char-prev" class="char-btn" aria-label="이전 캐릭터">←</button>
+        <button type="button" id="char-next" class="char-btn" aria-label="다음 캐릭터">→</button>
+      </div>
+    </div>
+
+    <div id="carousel" class="carousel">
+      <!-- character panels are populated by js/script.js -->
+    </div>
+    <div class="characters-hint">CLICK A PANEL TO EXPAND — 클릭하여 캐릭터 전환</div>
+  </section>
+
+  <!-- ============ HIGHLIGHTS — swiper carousel ============ -->
+  <section id="highlights" class="highlights" data-screen-label="Highlights">
+    <div class="highlights-head">
+      <div>
+        <div class="eyebrow">03 — WHY THIS SHOW</div>
+        <h2 class="section-title">봐야 하는 <span class="text-gold">이유</span></h2>
+      </div>
+      <div class="highlights-nav">
+        <button type="button" class="char-btn highlights-prev" aria-label="이전 카드">←</button>
+        <button type="button" class="char-btn highlights-next" aria-label="다음 카드">→</button>
+      </div>
+    </div>
+
+    <div class="highlights-swiper swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="highlight-card">
+            <div class="highlight-slot"><img class="highlight-img" src="img/zgdwkf7qakbg1.png" alt="압도적 액션 퀄리티"></div>
+            <div class="highlight-body">
+              <div class="highlight-head-row">
+                <span class="highlight-no" style="color:#00E676;">01</span>
+                <h3 class="highlight-title">압도적 액션 퀄리티</h3>
+              </div>
+              <p class="highlight-desc">제작사 BONES가 그려내는 화려한 전투 연출과 컷신. 한 프레임도 놓칠 수 없는 작화의 밀도.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="highlight-card">
+            <div class="highlight-slot"><img class="highlight-img" src="img/6989b244807cb.jpg" alt="뜨거운 성장 서사"></div>
+            <div class="highlight-body">
+              <div class="highlight-head-row">
+                <span class="highlight-no" style="color:#FFD700;">02</span>
+                <h3 class="highlight-title">뜨거운 성장 서사</h3>
+              </div>
+              <p class="highlight-desc">실패와 좌절을 넘어 유대를 쌓아가는 소년들의 성장극. 승리보다 더 뜨거운 건 다시 일어서는 순간이다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="highlight-card">
+            <div class="highlight-slot"><img class="highlight-img" src="img/hero-vs-villain.jpg" alt="입체적인 히어로 & 빌런"></div>
+            <div class="highlight-body">
+              <div class="highlight-head-row">
+                <span class="highlight-no" style="color:#FF3B30;">03</span>
+                <h3 class="highlight-title">입체적인 히어로 &amp; 빌런</h3>
+              </div>
+              <p class="highlight-desc">단순한 선악을 넘어선 신념의 대립. 빌런에게도 사연이 있고, 히어로에게도 흔들림이 있다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="highlight-card">
+            <div class="highlight-slot"><img class="highlight-img" src="img/xhcCOGDo3XeBNT69ePBEwg.jpg" alt="몰입감 넘치는 사운드"></div>
+            <div class="highlight-body">
+              <div class="highlight-head-row">
+                <span class="highlight-no" style="color:#3B9BFF;">04</span>
+                <h3 class="highlight-title">몰입감 넘치는 사운드</h3>
+              </div>
+              <p class="highlight-desc">긴장감을 극대화하는 오리지널 스코어와 성우진의 열연이 화면 밖까지 감정을 전달한다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="highlight-card">
+            <div class="highlight-slot"><img class="highlight-img" src="img/UT8WUr2Hd4OOdefkGJZzWmdTSJ-PUctd-he9MQf81Dv4xVz8dxhbNrLcGD7SqIIUm6h4UbTHXcFY_AuTotuMdYJSMtn2hO5qHKwSFkOrxrGjtZsHeUemfO1aTfwFw54gRF-RE420BTmxZZpl1ZxXuMVbhYxwRVGV5e6O_u7dQKU.webp" alt="촘촘하게 쌓아온 세계관"></div>
+            <div class="highlight-body">
+              <div class="highlight-head-row">
+                <span class="highlight-no" style="color:#FF9500;">05</span>
+                <h3 class="highlight-title">촘촘하게 쌓아온 세계관</h3>
+              </div>
+              <p class="highlight-desc">곳곳에 흩뿌려진 떡밥들이 시즌을 거듭할수록 하나로 이어지는 쾌감을 선사한다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="highlight-card">
+            <div class="highlight-slot"><img class="highlight-img" src="img/vZcAn5XaBINRb3HUKEuqeQClhhVowGYgE4majiCPpDAVhAMpFr7uxB2Xmy9hnxVUcSqvDZOMdjUOBvmaBbkxdA (1).webp" alt="우정과 라이벌의 케미"></div>
+            <div class="highlight-body">
+              <div class="highlight-head-row">
+                <span class="highlight-no" style="color:#00E676;">06</span>
+                <h3 class="highlight-title">우정과 라이벌의 케미</h3>
+              </div>
+              <p class="highlight-desc">함께 성장하는 동료들과 서로를 넘어서려는 라이벌들. 그 팽팽한 관계가 매 화를 뜨겁게 만든다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="highlight-card">
+            <div class="highlight-slot"><img class="highlight-img" src="img/1889898192_8f303348_V08ucQ.png" alt="눈물버튼을 누르는 순간들"></div>
+            <div class="highlight-body">
+              <div class="highlight-head-row">
+                <span class="highlight-no" style="color:#FFD700;">07</span>
+                <h3 class="highlight-title">눈물버튼을 누르는 순간들</h3>
+              </div>
+              <p class="highlight-desc">웃다가도 울게 되는 감정선. 캐릭터들의 성장과 이별, 재회가 마음 깊이 남는다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="highlights-pagination swiper-pagination"></div>
+  </section>
+
+  <!-- ============ REVIEWS — vertical stack ============ -->
+  <section id="reviews" class="reviews" data-screen-label="Reviews">
+    <div class="reviews-inner">
+      <div class="reviews-head">
+        <div>
+          <div class="eyebrow">04 — REVIEWS</div>
+          <h2 class="section-title">먼저 본 사람들의 <span class="text-gold">한 마디</span></h2>
+        </div>
+        <span class="reviews-meta">평점 4.9 / 5.0 · 12,480명</span>
+      </div>
+
+      <div class="reviews-list">
+        <div class="review-item" style="background:#00E676;">
+          <p class="review-text" style="color:#05130A;">히어로가 되고 싶었던 게 아니라, 포기하지 않는 사람이 되고 싶었던 거였다는 걸 이 작품 보고 알았다. 3화에서 결국 울었음.</p>
+          <div class="review-meta-row">
+            <span class="review-id" style="color:rgba(5,19,10,.6);">@deku_9th</span>
+            <span class="review-score" style="color:rgba(5,19,10,.6);">★ 5.0</span>
+          </div>
+        </div>
+        <div class="review-item" style="background:#12181F;">
+          <p class="review-text" style="color:#EDEFF2;">액션 작화 미쳤다. 스포츠 축제편은 그냥 극장에서 봐야 할 퀄리티. 한 화도 못 건너뛰겠더라.</p>
+          <div class="review-meta-row">
+            <span class="review-id" style="color:#6B7280;">@bones_fan_02</span>
+            <span class="review-score" style="color:#6B7280;">★ 4.8</span>
+          </div>
+        </div>
+        <div class="review-item" style="background:#FFD700;">
+          <p class="review-text" style="color:#08090B;">빌런 서사가 이렇게까지 설득력 있는 소년만화는 오랜만. 누구도 그냥 악당으로 남지 않는다.</p>
+          <div class="review-meta-row">
+            <span class="review-id" style="color:rgba(8,9,11,.6);">@tomura_note</span>
+            <span class="review-score" style="color:rgba(8,9,11,.6);">★ 4.9</span>
+          </div>
+        </div>
+        <div class="review-item" style="background:#12181F;">
+          <p class="review-text" style="color:#EDEFF2;">애니 입문작으로 추천받아 봤는데 결국 원작 단행본까지 다 샀습니다. 입문자한테 이만한 작품 없음.</p>
+          <div class="review-meta-row">
+            <span class="review-id" style="color:#6B7280;">@newbie_uA</span>
+            <span class="review-score" style="color:#6B7280;">★ 5.0</span>
+          </div>
+        </div>
+        <div class="review-item" style="background:#FF3B30;">
+          <p class="review-text" style="color:#FFFFFF;">'괜찮아, 내가 왔다'는 대사 하나로 힘든 시기를 버텼다. 애니가 사람을 살릴 수도 있구나 싶었음.</p>
+          <div class="review-meta-row">
+            <span class="review-id" style="color:rgba(255,255,255,.7);">@plus_ultra_kr</span>
+            <span class="review-score" style="color:rgba(255,255,255,.7);">★ 5.0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PV — full-bleed cinema ============ -->
+  <section id="pv" class="pv" data-screen-label="PV">
+    <div id="pv-stage" class="pv-stage js-open-trailer">
+      <img class="pv-art" src="img/w4mvreDjCEY9e9Ra0KGdKItJci9yxqaFYbXrDtONBqzLIp1YAcZZoLlHsV2yv5VbKtwd4S2fuBUTwws3B1w-vg.webp" alt="공식 PV">
+      <div class="pv-overlay"></div>
+      <div class="pv-center">
+        <div class="pv-play">▶</div>
+        <div id="pv-title" class="pv-title">FINAL SEASON</div>
+        <div class="pv-sub">OFFICIAL MAIN PV — 02:14</div>
+      </div>
+      <div class="pv-eyebrow">05 — OFFICIAL PV</div>
+    </div>
+    <div id="pv-seasons" class="pv-seasons">
+      <button type="button" class="season-btn" data-season="0">SEASON 1</button>
+      <button type="button" class="season-btn" data-season="1">SEASON 2</button>
+      <button type="button" class="season-btn" data-season="2">SEASON 3</button>
+      <button type="button" class="season-btn is-active" data-season="3">FINAL SEASON</button>
+    </div>
+  </section>
+
+  <!-- ============ WATCH — contained ============ -->
+  <section id="watch" class="watch" data-screen-label="Watch">
+    <div class="watch-inner">
+      <div class="eyebrow">06 — STREAMING</div>
+      <h2 class="section-title">지금 바로 <span class="text-gold">시청하기</span></h2>
+      <div class="watch-list">
+        <a href="#watch" class="platform-item">
+          <svg width="48" height="48" viewBox="0 0 48 48" class="platform-icon">
+            <circle cx="24" cy="24" r="23" fill="#FF3B30"></circle>
+            <text x="24" y="24" text-anchor="middle" dominant-baseline="central" font-family="Archivo Black, sans-serif" font-size="20" fill="#08090B">L</text>
+          </svg>
+          <span class="platform-name">LAFTEL</span>
+          <span class="platform-note">전 시즌 스트리밍</span>
+          <span class="platform-arrow">→</span>
+        </a>
+        <a href="#watch" class="platform-item">
+          <svg width="48" height="48" viewBox="0 0 48 48" class="platform-icon">
+            <circle cx="24" cy="24" r="23" fill="#E50914"></circle>
+            <text x="24" y="24" text-anchor="middle" dominant-baseline="central" font-family="Archivo Black, sans-serif" font-size="20" fill="#08090B">N</text>
+          </svg>
+          <span class="platform-name">NETFLIX</span>
+          <span class="platform-note">시즌 1–4 시청 가능</span>
+          <span class="platform-arrow">→</span>
+        </a>
+        <a href="#watch" class="platform-item">
+          <svg width="48" height="48" viewBox="0 0 48 48" class="platform-icon">
+            <circle cx="24" cy="24" r="23" fill="#FF1493"></circle>
+            <text x="24" y="24" text-anchor="middle" dominant-baseline="central" font-family="Archivo Black, sans-serif" font-size="20" fill="#08090B">T</text>
+          </svg>
+          <span class="platform-name">TVING</span>
+          <span class="platform-note">더빙판 동시 제공</span>
+          <span class="platform-arrow">→</span>
+        </a>
+        <a href="#watch" class="platform-item">
+          <svg width="48" height="48" viewBox="0 0 48 48" class="platform-icon">
+            <circle cx="24" cy="24" r="23" fill="#00E676"></circle>
+            <text x="24" y="24" text-anchor="middle" dominant-baseline="central" font-family="Archivo Black, sans-serif" font-size="20" fill="#08090B">S</text>
+          </svg>
+          <span class="platform-name">SERIES ON</span>
+          <span class="platform-note">회차별 구매</span>
+          <span class="platform-arrow">→</span>
+        </a>
+      </div>
+      <div class="watch-divider"></div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL ============ -->
+  <section class="final" data-screen-label="Final">
+    <div class="final-marquee">
+      <span class="final-marquee-item">GO BEYOND! PLUS ULTRA! &nbsp;GO BEYOND! PLUS ULTRA!&nbsp;</span>
+      <span class="final-marquee-item">GO BEYOND! PLUS ULTRA! &nbsp;GO BEYOND! PLUS ULTRA!&nbsp;</span>
+    </div>
+    <div class="final-marquee final-marquee--reverse">
+      <span class="final-marquee-item final-marquee-item--dim">PLUS ULTRA! GO BEYOND! &nbsp;PLUS ULTRA! GO BEYOND!&nbsp;</span>
+      <span class="final-marquee-item final-marquee-item--dim">PLUS ULTRA! GO BEYOND! &nbsp;PLUS ULTRA! GO BEYOND!&nbsp;</span>
+    </div>
+
+    <div class="final-cta-row">
+      <button type="button" class="btn-cta js-open-trailer">
+        <span class="btn-skew-inner">첫 화 무료로 보기</span>
+      </button>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-links">
+        <a href="#watch" class="footer-link">X</a>
+        <a href="#watch" class="footer-link">INSTAGRAM</a>
+        <a href="#watch" class="footer-link">YOUTUBE</a>
+      </div>
+      <div class="footer-copyright">© K. Horikoshi / Shueisha, My Hero Academia Project</div>
+      <div class="footer-stamp">&copy; MHA 2026.</div>
+    </footer>
+  </section>
+
+  </div>
+
+  <button type="button" id="to-top" class="to-top-btn" aria-label="맨 위로">↑</button>
+
+  <div id="trailer-modal" class="trailer-modal">
+    <div class="trailer-modal-box">
+      <iframe id="trailer-iframe" class="trailer-iframe" title="트레일러 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/script.js?v=10"></script>
+<script src="js/motion.js?v=23"></script>
+</body>
+</html>
